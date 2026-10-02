@@ -468,6 +468,24 @@ return msg;</pre></div>
   <div class="challenge">
     <h4>Desafio</h4>
     <p>Mude o código do function para que a mensagem final seja <code>OLÁ, IOT! - Turma de IoT 2026</code>. Dica: em JavaScript, juntamos textos com o sinal <code>+</code>.</p>
+    <p>Onde mudar: dê duplo clique no nó <b>Maiúsculas</b>, aba <b>Ao receber mensagem</b>. Depois clique em <b>Concluído</b>, <b>Deploy</b> e aperte o botão do inject.</p>
+    <details class="json">
+      <summary>Ver a resposta (tente antes!)</summary>
+      <div style="padding:4px 14px 14px">
+        <div class="ps"><div class="bar">Código do nó function<button class="copy" data-copy="msg.payload = msg.payload.toUpperCase() + &quot; - Turma de IoT 2026&quot;;&#10;return msg;">Copiar</button></div>
+<pre>msg.payload = msg.payload.toUpperCase() + " - Turma de IoT 2026";
+return msg;</pre></div>
+        <p>Resultado na aba 🐞: <code>"OLÁ, IOT! - Turma de IoT 2026"</code></p>
+        <div class="note tip">
+          <b class="k">A ordem importa!</b>
+          <p>O <code>.toUpperCase()</code> vem <b>antes</b> do <code>+</code>, então só o “Olá, IoT!” vira maiúsculo. Agora compare com este código, que junta os textos primeiro e só depois transforma tudo:</p>
+        </div>
+        <div class="ps"><div class="bar">Outra forma (resultado diferente)<button class="copy" data-copy="msg.payload = (msg.payload + &quot; - Turma de IoT 2026&quot;).toUpperCase();&#10;return msg;">Copiar</button></div>
+<pre>msg.payload = (msg.payload + " - Turma de IoT 2026").toUpperCase();
+return msg;</pre></div>
+        <p>Resultado: <code>"OLÁ, IOT! - TURMA DE IOT 2026"</code>, tudo em maiúsculas. Teste os dois e veja a diferença: o computador sempre segue a ordem exata que você escreveu.</p>
+      </div>
+    </details>
   </div>
 
   <label class="done"><input type="checkbox" data-step="a1"> Concluí esta etapa</label>
